@@ -1,0 +1,21 @@
+# Changelog
+
+Toutes les modifications notables de ce projet sont documentées ici.
+
+Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/),
+et le projet adhère à [Semantic Versioning](https://semver.org/lang/fr/).
+
+## [Non publié]
+
+### Ajouté
+- Gouvernance GitHub complète : modèles d'issues, modèle de PR, `CODEOWNERS`, labels centralisés (`.github/labels.yml`), étiquetage automatique des PR par domaine
+- Documentation communautaire : `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `SUPPORT.md`, `CONVENTIONAL_COMMITS.md`
+- Trois premières décisions d'architecture documentées (`docs/adr/0001` à `0003`) : offline-first, PyWebView, SQLite
+- Backlog initial de 15 issues et plan de 8 pull requests (`docs/ISSUES.md`, `docs/PULL_REQUESTS.md`)
+
+### En attente de décision
+- Licence du projet — voir `README.md`, section Licence
+
+## [0.0.0] - 2026-09-18
+### Ajouté
+- Initialisation du dépôt
