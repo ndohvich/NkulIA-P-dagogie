@@ -18,7 +18,7 @@ SQL, etc.).
 Envoyez plutôt un message directement au mainteneur :
 
 - GitHub : [@ndohvich](https://github.com/ndohvich)
-- Email : `<à compléter — votre adresse de contact>`
+- Email : `ndohmoise@gmail.com`
 
 Merci d'inclure :
 1. Le module concerné (authentification, import de documents, export PDF, etc.)
