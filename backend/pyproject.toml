@@ -1,0 +1,78 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nkulia-backend"
+version = "0.1.0"
+description = "API locale de NkulIA"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "fastapi>=0.115,<1.0",
+  "uvicorn[standard]>=0.30,<1.0",
+  "sqlalchemy>=2.0,<3.0",
+  "alembic>=1.13,<2.0",
+  "pydantic>=2.8,<3.0",
+  "email-validator>=2.1,<3.0",
+  "python-multipart>=0.0.9,<1.0",
+  "argon2-cffi>=23.1,<24.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "pytest-cov>=5.0",
+  "factory-boy>=3.3",
+  "httpx>=0.27",
+  "ruff>=0.6",
+  "mypy>=1.11",
+  "bandit[toml]>=1.7",
+]
+rag = ["lancedb>=0.15", "pypdf>=5.0", "python-docx>=1.1"]
+desktop = ["pywebview>=5.2", "pyinstaller>=6.10"]
+
+# ---------------------------------------------------------------------
+# pytest — voir CONTRIBUTING.md pour la commande `make test`
+# ---------------------------------------------------------------------
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=app --cov-report=term-missing --cov-fail-under=80"
+
+[tool.coverage.run]
+source = ["app"]
+omit = ["app/api/routes/__init__.py"]
+
+# ---------------------------------------------------------------------
+# ruff — remplace flake8 + isort + une partie de pylint, un seul outil
+# ---------------------------------------------------------------------
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = [
+  "E501",  # ligne trop longue — déjà géré par `ruff format`
+  "B008",  # Depends(...) en valeur par défaut : le patron officiel de
+           # FastAPI pour l'injection de dépendances, pas un bug réel —
+           # voir https://fastapi.tiangolo.com/tutorial/dependencies/
+]
+
+[tool.ruff.format]
+quote-style = "double"
+
+# ---------------------------------------------------------------------
+# mypy — typage statique
+# ---------------------------------------------------------------------
+[tool.mypy]
+python_version = "3.11"
+warn_unused_configs = true
+warn_redundant_casts = true
+disallow_untyped_defs = false  # activé progressivement, module par module
+ignore_missing_imports = true
+
+# ---------------------------------------------------------------------
+# bandit — analyse de sécurité statique (recherche de failles connues)
+# ---------------------------------------------------------------------
+[tool.bandit]
+exclude_dirs = ["tests", ".venv"]

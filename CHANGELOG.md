@@ -12,6 +12,10 @@ et le projet adhère à [Semantic Versioning](https://semver.org/lang/fr/).
 - Documentation communautaire : `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `SUPPORT.md`, `CONVENTIONAL_COMMITS.md`
 - Trois premières décisions d'architecture documentées (`docs/adr/0001` à `0003`) : offline-first, PyWebView, SQLite
 - Backlog initial de 15 issues et plan de 8 pull requests (`docs/ISSUES.md`, `docs/PULL_REQUESTS.md`)
+- Squelette applicatif : backend FastAPI, frontend React/Vite/Tailwind, lanceur desktop PyWebView
+- Authentification locale complète (issues #5–#8) : modèles SQLAlchemy, migration Alembic initiale, hachage Argon2, endpoints `register`/`login`/`logout`/`me`, 14 tests (unit/integration/e2e), 97 % de couverture
+- Outillage qualité : `pre-commit` (ruff, mypy, bandit, gitleaks), `pyproject.toml` consolidé, `Makefile`
+- CI GitHub Actions (`ci.yml`), analyse de sécurité statique (`codeql.yml`), workflow de release desktop (`release.yml`)
 
 ### En attente de décision
 - Licence du projet — voir `README.md`, section Licence
