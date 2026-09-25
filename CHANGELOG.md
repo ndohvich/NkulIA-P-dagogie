@@ -16,6 +16,7 @@ et le projet adhère à [Semantic Versioning](https://semver.org/lang/fr/).
 - Authentification locale complète (issues #5–#8) : modèles SQLAlchemy, migration Alembic initiale, hachage Argon2, endpoints `register`/`login`/`logout`/`me`, 14 tests (unit/integration/e2e), 97 % de couverture
 - Outillage qualité : `pre-commit` (ruff, mypy, bandit, gitleaks), `pyproject.toml` consolidé, `Makefile`
 - CI GitHub Actions (`ci.yml`), analyse de sécurité statique (`codeql.yml`), workflow de release desktop (`release.yml`)
+- Import de documents pédagogiques (issues #9-#10) : parseur DOCX (fiches de progression et projets pédagogiques), détection automatique du vocabulaire de filière (UA/UE vs Chapitre/Leçon) depuis l'en-tête, modèle de données Module → Unité intermédiaire → Unité fine, endpoints `POST /ingestion/import`, `GET /ingestion/documents`, `GET /ingestion/documents/{id}/warnings` — 22 nouveaux tests contre le corpus réel (35 au total), 97,6 % de couverture
 
 ### En attente de décision
 - Licence du projet — voir `README.md`, section Licence

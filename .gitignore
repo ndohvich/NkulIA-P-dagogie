@@ -1,0 +1,62 @@
+# ==================== Python ====================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+pip-wheel-metadata/
+
+# Environnements virtuels
+.venv/
+venv/
+env/
+ENV/
+
+# Tests & couverture
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.tox/
+
+# ==================== Bases de données locales ====================
+*.sqlite3
+*.sqlite3-journal
+backend/data/
+
+# ==================== Node / Frontend ====================
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+npm-debug.log*
+yarn-error.log*
+
+# ==================== Build desktop (PyInstaller) ====================
+desktop/build/
+desktop/dist/
+*.spec.bak
+
+# ==================== Secrets & configuration locale ====================
+.env
+.env.*
+!.env.example
+
+# ==================== Éditeurs / OS ====================
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ==================== Divers ====================
+*.log
+.cache/

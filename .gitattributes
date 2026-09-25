@@ -1,0 +1,15 @@
+# Normalise les fins de ligne en LF pour tout le monde, quel que soit l'OS
+# de contribution (Windows/macOS/Linux) — évite les diffs de fin de ligne.
+* text=auto eol=lf
+
+# Fichiers binaires à ne jamais tenter de "differ" comme du texte
+*.png binary
+*.jpg binary
+*.ico binary
+*.sqlite3 binary
+*.pdf binary
+
+# Exclure la documentation générée et les données du calcul de langage
+# GitHub (l'onglet "Languages" du dépôt reste représentatif du vrai code)
+docs/* linguist-documentation
+*.md linguist-documentation
